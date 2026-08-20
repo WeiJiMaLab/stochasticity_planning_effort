@@ -1,0 +1,10 @@
+Model Name,Stochasticity Type,Variable,isGLMM,Formula / Status
+Empirical,R,greedydiff,True,\texttt{y ~ x * conditions + (1 + x + conditions|participants):Converged}
+Empirical,R,points,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,R,first_rt,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,V,greedydiff,True,\texttt{y ~ x * conditions + (1 + x + conditions|participants):Converged}
+Empirical,V,points,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,V,first_rt,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,T,greedydiff,True,\texttt{y ~ x * conditions + (1 + x + conditions|participants):Converged}
+Empirical,T,points,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,T,first_rt,,\texttt{y ~ conditions + (1 + conditions|participants):Converged}

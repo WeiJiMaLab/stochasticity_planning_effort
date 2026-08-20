@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Environmental stochasticity reduces human planning effort"
+type: software
+license: MIT
+authors:
+  - family-names: Lei
+    given-names: Jordan
+  - family-names: Olieslagers
+    given-names: Jeroen
+  - family-names: Arfaei
+    given-names: Nastaran
+  - family-names: Lin
+    given-names: Daisy Xinlei
+  - family-names: Ma
+    given-names: Wei Ji
+references:
+  - type: data
+    title: "Environmental stochasticity reduces human planning effort (data)"
+    doi: 10.17605/OSF.IO/VYH8U
+    authors:
+      - family-names: Lei
+        given-names: Jordan
+      - family-names: Olieslagers
+        given-names: Jeroen
+      - family-names: Arfaei
+        given-names: Nastaran
+      - family-names: Lin
+        given-names: Daisy Xinlei
+      - family-names: Ma
+        given-names: Wei Ji
+  - type: article
+    title: "Human Planning in Stochastic Environments"
+    url: "https://osf.io/preprints/psyarxiv/bh56p_v1"
+    authors:
+      - family-names: Lei
+        given-names: Jordan
+      - family-names: Olieslagers
+        given-names: Jeroen
+      - family-names: Arfaei
+        given-names: Nastaran
+      - family-names: Lin
+        given-names: Daisy Xinlei
+      - family-names: Ma
+        given-names: Wei Ji

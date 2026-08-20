@@ -1,0 +1,4 @@
+Model Name,Stochasticity Type,Variable,Formula / Status
+Empirical,R,total_rt,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,V,total_rt,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+Empirical,T,total_rt,\texttt{y ~ conditions + (1 + conditions|participants):Converged}

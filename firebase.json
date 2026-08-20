@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "public": "experiment/src",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "headers": [
+      {
+        "source": "**/*.@(js|html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/demoT",
+        "destination": "/demoC",
+        "type": 301
+      }
+    ]
+  }
+}

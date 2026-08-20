@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Treasure Game</title>
+
+    <script src="https://unpkg.com/jspsych@7.3.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-fullscreen@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey@0.2.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-browser-check@1.0.2"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@0.2.1/css/survey.css">
+    <link href="https://unpkg.com/jspsych@7.3.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    
+
+    <script type="text/javascript">
+      //initialize global jsPsych
+      var jsPsych = initJsPsych()
+    </script>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body></body>
+  <script type = "module">
+    import { experiment} from './modules/experiment.js'
+    import { config, makeId } from './modules/utils.js'
+    // Firebase is loaded lazily, below, and only for real data-collection runs.
+    // Demo runs (?type=demoR|demoV|demoC) never write data, so they must not
+    // depend on the backend being reachable.
+
+    // Firebase configuration for data collection. These are the credentials of
+    // the original (now retired) data-collection project and are kept only for
+    // reference: they no longer resolve. To collect data again, replace them
+    // with the config of a live project that has a Realtime Database.
+    // The demo does not use any of this.
+    const firebaseConfig = {
+      apiKey: "AIzaSyCU886K-io4NuDJS9Okc9qRLWmYNvbpwnY",
+      authDomain: "pirate-treasure-9e3ba.firebaseapp.com",
+      projectId: "pirate-treasure-9e3ba",
+      storageBucket: "pirate-treasure-9e3ba.appspot.com",
+      messagingSenderId: "1084842642049",
+      appId: "1:1084842642049:web:39a60b8f9c76ed0a2d9b80",
+      measurementId: "G-17HLBXEHFF"
+    };
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const prolific_id = urlParams.get('prolific_id')
+    const study_id = urlParams.get('study_id')
+    const session_id = urlParams.get('session_id')
+    const stoch_type = urlParams.get('type')
+
+    // Demo-only: ?skip=1 jumps straight into the games, bypassing the screen
+    // checks, instructions, comprehension check, and practice block.
+    const skip_intro = ["1", "true", "yes"].includes(
+        (urlParams.get('skip') || "").toLowerCase())
+
+
+    // demoT is the former name for demoC; kept as an alias.
+    const DEMO_TYPES = ["demoR", "demoV", "demoC", "demoT"]
+    const is_demo = DEMO_TYPES.includes(stoch_type)
+
+    // Initialize Firebase only when data will actually be recorded.
+    if (!is_demo) {
+      const { initializeApp } = await import("https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js");
+      const { getAnalytics } = await import("https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js");
+      const { getDatabase, ref, set, get, push, onValue } = await import("https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js");
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const database = getDatabase();
+
+      config.ref = ref
+      config.database = database
+      config.set = set
+      config.push = push
+      config.get = get
+      config.on_value = onValue
+    }
+
+    config.prolific_id = prolific_id
+    config.study_id = study_id
+    config.session_id = session_id
+    config.id = makeId("prolific_id-" + prolific_id + "-study_id-" + study_id + "-session_id-" + session_id)
+    config.stoch_type = stoch_type
+    config.counter = 0
+    config.demo = is_demo
+    config.skip_intro = is_demo && skip_intro
+    
+    // initialize timeline
+    var timeline = []
+
+    // add experiment details
+    experiment(timeline)
+
+    // run experiment
+    jsPsych.run(timeline)
+  </script>
+</html>

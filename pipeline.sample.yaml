@@ -1,0 +1,30 @@
+# Sample Slurm/cluster config for the pipeline stage scripts (1_preprocess.sh ...
+# 3c_analysis.sh, _pipeline.sh).
+#
+# The values below are placeholders. Copy this file to:
+#
+#     analysis/scripts/pipeline.local.yaml
+#
+# which is gitignored and takes precedence over the checked-in defaults in
+# analysis/scripts/_pipeline.yaml. See load_config.sh.
+#
+# What this DOES control: BASE, and the --account/--mail-user/--mail-type passed
+# to every self-submitting `sbatch` call.
+#
+# What this does NOT control: the #SBATCH resource requests themselves (-c, --mem,
+# -t, --array, -J, -o). Slurm parses #SBATCH lines directly from the file text
+# before any shell code runs, so they can't be filled in from a config read at
+# runtime -- edit those lines in each stage script if your cluster needs different
+# resources. Note that some sites route jobs to a QOS by requested walltime.
+
+# Absolute path to this repo's `analysis/` directory on the machine that runs the jobs.
+base: /path/to/planning_in_stochastic_environments/analysis
+
+slurm:
+  # Leave `account` unset if your cluster does not require -A/--account; there is
+  # no in-file #SBATCH fallback, so an unset value simply omits the flag.
+  # account: my_slurm_account
+
+  # Leave `mail_user` unset to disable job email entirely.
+  # mail_user: you@example.edu
+  mail_type: END

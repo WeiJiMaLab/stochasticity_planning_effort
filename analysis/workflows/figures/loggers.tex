@@ -1,0 +1,54 @@
+\begin{tabular}{llll}
+\toprule
+Model Name & Stochasticity Type & Variable & Formula / Status \\
+\midrule
+\multirow[t]{12}{*}{Empirical} & \multirow[t]{4}{*}{Controllability} & y = P(left) x = label diff & \texttt{y} $\sim$ \texttt{x * conditions + (1 + x + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(firstRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(totalRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = points & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & \multirow[t]{4}{*}{Reliability} & y = P(left) x = label diff & \texttt{y} $\sim$ \texttt{x * conditions + (1 + x + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(firstRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(totalRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = points & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & \multirow[t]{4}{*}{Volatility} & y = P(left) x = label diff & \texttt{y} $\sim$ \texttt{x * conditions + (1 + x + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(firstRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = log(totalRT) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){3-4}
+ &  & y = points & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){1-4} \cmidrule(lr){2-4} \cmidrule(lr){3-4}
+\multirow[t]{3}{*}{PC depth levelmean} & Controllability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Reliability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Volatility & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){1-4} \cmidrule(lr){2-4} \cmidrule(lr){3-4}
+\multirow[t]{3}{*}{PC depth max} & Controllability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Reliability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Volatility & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){1-4} \cmidrule(lr){2-4} \cmidrule(lr){3-4}
+\multirow[t]{3}{*}{PC depth path} & Controllability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Reliability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Volatility & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){1-4} \cmidrule(lr){2-4} \cmidrule(lr){3-4}
+\multirow[t]{3}{*}{PC depth sum} & Controllability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Reliability & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){2-4} \cmidrule(lr){3-4}
+ & Volatility & y = log(beta) & \texttt{y} $\sim$ \texttt{conditions + (1 + conditions|participants):Converged} \\
+\cmidrule(lr){1-4} \cmidrule(lr){2-4} \cmidrule(lr){3-4}
+\bottomrule
+\end{tabular}

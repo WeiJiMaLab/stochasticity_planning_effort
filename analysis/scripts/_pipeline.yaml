@@ -1,0 +1,16 @@
+# Placeholder defaults for the pipeline stage scripts. Do not put personal values here.
+# To configure your own cluster: copy `pipeline.sample.yaml` (repo root) to
+# `analysis/scripts/pipeline.local.yaml` (gitignored, takes precedence) and set `base`.
+# See the README's "Cluster configuration" section, and load_config.sh.
+
+# Absolute path to this repo's `analysis/` directory on the machine that runs the jobs.
+base: /path/to/planning_in_stochastic_environments/analysis
+
+slurm:
+  # Leave `account` unset if your cluster does not require -A/--account; there is
+  # no in-file #SBATCH fallback, so an unset value simply omits the flag.
+  # account: my_slurm_account
+
+  # Leave `mail_user` unset to disable job email entirely.
+  # mail_user: you@example.edu
+  mail_type: END

@@ -1,0 +1,50 @@
+{
+  "R": {
+    "n": 100,
+    "n_age_reported": 100,
+    "mean_age": 36.86,
+    "sd_age": 11.177195398206877,
+    "gender_counts": {
+      "Male": 50,
+      "Female": 48,
+      "Nonbinary": 2,
+      "Prefer Not to Answer": 0
+    }
+  },
+  "V": {
+    "n": 100,
+    "n_age_reported": 100,
+    "mean_age": 37.79,
+    "sd_age": 10.62805036426976,
+    "gender_counts": {
+      "Male": 50,
+      "Female": 48,
+      "Nonbinary": 2,
+      "Prefer Not to Answer": 0
+    }
+  },
+  "T": {
+    "n": 100,
+    "n_age_reported": 100,
+    "mean_age": 38.01,
+    "sd_age": 10.639639053648352,
+    "gender_counts": {
+      "Male": 50,
+      "Female": 48,
+      "Nonbinary": 2,
+      "Prefer Not to Answer": 0
+    }
+  },
+  "pooled": {
+    "n": 300,
+    "n_age_reported": 300,
+    "mean_age": 37.553333333333335,
+    "sd_age": 10.793306898331055,
+    "gender_counts": {
+      "Male": 150,
+      "Female": 144,
+      "Nonbinary": 6,
+      "Prefer Not to Answer": 0
+    }
+  }
+}

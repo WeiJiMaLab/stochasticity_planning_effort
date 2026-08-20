@@ -1,0 +1,4 @@
+Model Name,Stochasticity Type,Variable,Formula / Status
+PC depth sum,R,invtemp,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+PC depth sum,V,invtemp,\texttt{y ~ conditions + (1 + conditions|participants):Converged}
+PC depth sum,T,invtemp,\texttt{y ~ conditions + (1 + conditions|participants):Converged}

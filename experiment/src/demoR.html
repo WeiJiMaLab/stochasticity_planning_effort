@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Triangle of Treasures — Reliability Demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+      :root{
+        --ink: #1c2530;
+        --muted: #5b6673;
+        --line: #e2e6eb;
+        --accent: #246c99;
+        --accent-text: #246c99;
+        --accent-deep: #080745;
+        --bg: #92d9d41f;
+      }
+      *{ box-sizing: border-box; }
+      body{
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.55;
+      }
+      .card{
+        width: 100%;
+        max-width: 640px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 40px;
+        box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+      }
+      h1{ margin: 0 0 6px; font-size: 28px; font-weight: 600; letter-spacing: -.01em; color: var(--accent-deep); }
+      .lede{ margin: 0 0 26px; color: var(--muted); font-size: 15px; }
+      .eyebrow{
+        margin: 0 0 8px;
+        font-size: 12px; font-weight: 600;
+        letter-spacing: .09em; text-transform: uppercase;
+        color: var(--accent-text);
+      }
+      .choices{ display: flex; flex-direction: column; gap: 12px; }
+      .btn{
+        display: block; padding: 15px 18px;
+        border-radius: 10px; text-decoration: none;
+        border: 1px solid var(--line); background: #fff;
+        color: inherit; transition: border-color .12s, transform .06s;
+      }
+      .btn:hover{ border-color: #b9c2cc; }
+      .btn:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
+      .btn:active{ transform: translateY(1px); }
+      .btn.primary{ border-color: var(--accent); background: var(--accent); color: #fff; }
+      .btn.primary:hover{ background: #095c8d; }
+      .btn .title{ display: block; font-size: 16px; font-weight: 600; }
+      .btn .sub{ display: block; margin-top: 3px; font-size: 13px; opacity: .78; }
+      .note{
+        margin: 24px 0 0; padding-top: 18px;
+        border-top: 1px solid var(--line);
+        font-size: 13px; color: var(--muted);
+      }
+      .note a{ color: var(--accent-text); }
+      @media (prefers-color-scheme: dark){
+        :root{ --ink:#e8ecf1; --muted:#9aa5b1; --line:#2b3440; --bg:#141a21; --accent:#66adbc; --accent-text:#66adbc; --accent-deep:#e8ecf1; }
+        .card{ background:#1b222b; }
+
+
+        .btn{ background:#1b222b; }
+        .btn.primary{ color:#10161c; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">Reliability version</p>
+      <h1>Welcome to a demo of the Triangle&nbsp;of&nbsp;Treasures Task</h1>
+      <p class="lede">
+        Plan a route down a triangle of treasure chests and collect as many points as
+        you can. Some treasure chests are <b>mystery chests</b>: you cannot see what they hold until you land on them. Nothing you do here is recorded.
+      </p>
+
+      <div class="choices">
+        <a class="btn primary" href="./?type=demoR">
+          <span class="title">Entire Demo (Includes Instructions)</span>
+          <span class="sub">Full walkthrough: instructions, comprehension check, and practice games</span>
+        </a>
+        <a class="btn" href="./?type=demoR&amp;skip=1">
+          <span class="title">Task (Skip Instructions)</span>
+          <span class="sub">Go straight to the games</span>
+        </a>
+      </div>
+
+      <p class="note">
+        Best on a desktop browser. Move with the <b>F</b> and <b>J</b> keys.
+        Other versions: <a href="demoV.html">Volatility</a>, <a href="demoC.html">Controllability</a>.<br>
+        Accompanies <a href="https://osf.io/preprints/psyarxiv/bh56p_v1">Human Planning in Stochastic Environments</a>.
+      </p>
+    </main>
+  </body>
+</html>
